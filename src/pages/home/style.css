@@ -86,7 +86,7 @@ header .sub-nav {
 
 .sub-nav ul li span {
     color: var(--base-text-color);
-    font-size: var(--font-size);
+    font-size: calc(var(--font-size) + 0.3rem);
 }
 
 section {
@@ -202,7 +202,7 @@ section .container .background .bg-text span {
 }
 
 .container .main-display .product-img img {
-    height: auto;
+    height: 100%;
     width: 100%;
 }
 

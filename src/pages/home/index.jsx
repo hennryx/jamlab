@@ -12,6 +12,8 @@ import icon2 from "../../assets/orangeIcon.png"
 import icon3 from "../../assets/mulberryIcon.png"
 import icon4 from "../../assets/guavaIcon.png"
 
+import leaf from "../../assets/leaf1.png"
+
 import strawDecor1 from "../../assets/wholeStraberry.png"
 import strawDecor2 from "../../assets/halfStrawberry.png"
 import strawDecor3 from "../../assets/smallStrawberry.png"
@@ -24,6 +26,8 @@ import orangeDecor3 from "../../assets/orangeHalf2.png"
 
 import guavaDecor1 from "../../assets/wholeGuava.png"
 import guavaDecor2 from "../../assets/halfGuava.png"
+import { VscAccount } from "react-icons/vsc";
+import { IoNotifications } from "react-icons/io5";
 
 const products = [
     {
@@ -77,6 +81,14 @@ const products = [
                     'transform': "translate(-30rem, -7rem)",
                 }
             },
+            {
+                img: leaf,
+                design: {
+                    'width': "170px",
+                    'position': "absolute",
+                    'transform': "translate(-15rem, 16rem)",
+                }
+            },
         ]
     },
     {
@@ -122,6 +134,14 @@ const products = [
                     'transform': "translate(-30rem, -7rem)",
                 }
             },
+            {
+                img: leaf,
+                design: {
+                    'width': "170px",
+                    'position': "absolute",
+                    'transform': "translate(-15rem, 16rem)",
+                }
+            },
         ]
     },
     {
@@ -133,7 +153,17 @@ const products = [
         icon: icon3,
         description: "Ruby-red and lusciously sweet, this mulberry jam is a fresh and tangy homemade treat to spread over buttery toast, biscuits or warm croissants!",
         baseColor: "#4A1A1A",
-        backColor: "#2A1B4D"
+        backColor: "#2A1B4D",
+        decorations: [
+            {
+                img: leaf,
+                design: {
+                    'width': "170px",
+                    'position': "absolute",
+                    'transform': "translate(-15rem, 16rem)",
+                }
+            },
+        ]
     },
     {
         id: 3,
@@ -208,10 +238,10 @@ const Home = () => {
                 <nav className='sub-nav'>
                     <ul>
                         <li className='nav-item'>
-                            <span>Account</span>
+                            <span><VscAccount /></span>
                         </li>
                         <li className='nav-item'>
-                            <span>notification</span>
+                            <span><IoNotifications /></span>
                         </li>
                     </ul>
                 </nav>
