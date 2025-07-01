@@ -288,9 +288,9 @@ const Home = () => {
                                         key={i}
                                         className={`decoration ${isAnimating ? 'animate-in' : ''}`}
                                         style={{
-                                            width: dec?.design?.width,
-                                            position: dec?.design?.position,
+                                            ...dec?.design,
                                             '--final-transform': dec?.design?.transform || 'translate(0, 0)',
+                                            opacity: isAnimating ? 1 : 0,
                                         }} 
                                     />
                                 ))}

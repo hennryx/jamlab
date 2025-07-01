@@ -3,7 +3,7 @@
 }
 
 .product-active {
-    animation: popupFromBottom 0.6s ease-in-out both;
+    animation: popupFromBottom 1s ease-out both;
 }
 
 @keyframes popupFromBottom {
@@ -26,18 +26,40 @@
 }
 
 .decoration.animate-in {
-    animation: popFromLeft 0.6s ease-in-out both;
+    animation: popFromLeft 0.8s ease-out both;
 }
-
+/* 
 @keyframes popFromLeft {
     from {
         opacity: 0;
-        z-index: -9;
-        transform: translate(1rem, 15rem); 
+        display: none;
+        transform: translate(1rem, 15rem) scale(0.5); 
     }
 
     to {
-        z-index: 9;
+        opacity: 1;
+        transform: var(--final-transform) scale(1);
+    }
+} */
+
+@keyframes popFromLeft {
+    0% {
+        opacity: 0;
+        transform: translate(1rem, 25rem);
+    }
+    
+    70% {
+        opacity: 1;
+        transform: var(--final-transform) translateY(-10px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: var(--final-transform) translateY(-5px);
+    }
+    
+    100% {
+        opacity: 1;
         transform: var(--final-transform);
     }
 }
