@@ -204,6 +204,7 @@ section .container .background .bg-text span {
 .container .main-display .product-img img {
     height: 100%;
     width: 100%;
+    filter: drop-shadow(4px 20px 8px rgba(0, 0, 0, 0.3));
 }
 
 .container .main-display .price {
@@ -232,6 +233,7 @@ section .container .background .bg-text span {
     padding: 0.2rem 1rem;
     font-size: var(--font-size);
     font-weight: bold;
+    cursor: pointer;
 }
 
 .item figure {

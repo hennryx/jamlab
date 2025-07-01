@@ -1,7 +1,43 @@
-.popup {
-    animation: popupAnimation 5s linear 2s infinite alternate;
+:root {
+    --final-transform: translate(0, 0);
 }
 
-.popupAnimation {
-    
+.product-active {
+    animation: popupFromBottom 0.6s ease-in-out both;
+}
+
+@keyframes popupFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.3));
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-80px);
+        filter: drop-shadow(1px 80px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    100% {
+        transform: translateY(0);
+        filter: drop-shadow(4px 20px 8px rgba(0, 0, 0, 0.3));
+    }
+}
+
+.decoration.animate-in {
+    animation: popFromLeft 0.6s ease-in-out both;
+}
+
+@keyframes popFromLeft {
+    from {
+        opacity: 0;
+        z-index: -9;
+        transform: translate(1rem, 15rem); 
+    }
+
+    to {
+        z-index: 9;
+        transform: var(--final-transform);
+    }
 }

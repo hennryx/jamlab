@@ -28,6 +28,7 @@ import guavaDecor1 from "../../assets/wholeGuava.png"
 import guavaDecor2 from "../../assets/halfGuava.png"
 import { VscAccount } from "react-icons/vsc";
 import { IoNotifications } from "react-icons/io5";
+import { useEffect } from 'react'
 
 const products = [
     {
@@ -206,10 +207,19 @@ const products = [
 
 const Home = () => {
     const [activeProduct, setActiveProduct] = useState(products[0])
+    const [isAnimating, setIsAnimating] = useState(false)
 
     const handleClick = (i) => {
-        setActiveProduct(products[i]);
+        setIsAnimating(false)
+        setTimeout(() => {
+            setActiveProduct(products[i])
+            setIsAnimating(true)
+        }, 50)
     }
+
+    useEffect(() => {
+        setIsAnimating(true)
+    }, [])
 
     return (
         <div>
@@ -268,11 +278,21 @@ const Home = () => {
 
                             <div className="main-display">
                                 <div className="backdrop-blur" style={{ "--backdropColor": activeProduct.backColor }}></div>
-                                <figure className="product-img">
+                                <figure className={`product-img ${isAnimating ? 'product-active' : ''}`}>
                                     <img src={activeProduct.image} alt="strawberry" />
                                 </figure>
                                 {activeProduct?.decorations && activeProduct.decorations.map((dec, i) => (
-                                    <img src={dec.img} alt="img" key={i} className='decoration' style={dec?.design} />
+                                    <img
+                                        src={dec.img}
+                                        alt="img"
+                                        key={i}
+                                        className={`decoration ${isAnimating ? 'animate-in' : ''}`}
+                                        style={{
+                                            width: dec?.design?.width,
+                                            position: dec?.design?.position,
+                                            '--final-transform': dec?.design?.transform || 'translate(0, 0)',
+                                        }} 
+                                    />
                                 ))}
                                 <div className="price">₱ {activeProduct.price}</div>
                             </div>
